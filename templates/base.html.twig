@@ -2,11 +2,48 @@
 <html>
     <head>
         <meta charset="UTF-8">
+		
+		<!-- Necessaire Bootstrap-->
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<!-- Bootstrap CSS -->
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
         <title>{% block title %}ProStage{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+		
     </head>
     <body>
-		{% block menu %}{% endblock %}
+		{% block titre %}
+			<div class ="contrainer">
+				<div class="row">
+					<div class="col-3 offset-1">
+						<h1> ProStages </h1>
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+		{% block menu %}
+			<div class = "container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<a href="{{path('index')}}" >Accueil</a>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<a href="{{path('entreprises')}}" >Fiche entreprises</a>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<a href="{{path('formations')}}" > Fiche formations</a>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<a href="{{path('stagesId',{id:5})}}" >Fiche stages</a>
+					</div>
+				</div>
+			</div>
+		
+		
+		{% endblock %}
 		
         {% block contenu %}{% endblock %}
 		
