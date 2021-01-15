@@ -37,6 +37,12 @@ class Entreprise
      */
     private $Site;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Stage::class, inversedBy="nomEntreprise")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $nom;
+
     public function getId(): ?int
     {
         return $this->id;
